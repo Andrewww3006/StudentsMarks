@@ -3,6 +3,7 @@ package com.company.vehicles;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+
 public class Student {
 
     private String name;
@@ -13,6 +14,7 @@ public class Student {
     private int physMark;
     private ArrayList<Student> studentList;
 
+    public Student(){}
     public Student (ArrayList<Student> studentList){
         this.studentList = studentList;
     }
@@ -26,6 +28,9 @@ public class Student {
         this.physMark = physMark;
     }
 
+    public void setCourse (int course){
+        this.course = course;
+    }
 
     public String getName() {
         return name;
@@ -74,6 +79,18 @@ public class Student {
                 + " average mark: " + student.getAverageMark(student.getMathMark(), student.getChemMark(), student.getPhysMark()));
     }
 
+    public void moveToNextCourse(){
+        for (Student student:studentList)
+        if(student.getAverageMark(student.getMathMark(), student.getPhysMark() , student.getChemMark()) >= 3)
+            student.setCourse(student.getCourse()+1);
+    }
+
+    public void printStudents(ArrayList<Student> students, int course){
+        for (Student student: students){
+            if (student.getCourse() == course)
+                System.out.println(student.getName());
+        }
+    }
 
 
 

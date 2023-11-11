@@ -9,17 +9,21 @@ public class Main {
 
         ArrayList<Student> studentList = new ArrayList<>();
         Student ivanov = new Student("Ivanov", 52294, 2,5,4,3);
-        Student petrov = new Student("Petrov", 52295, 3,1,2,2);
-        Student sidorov = new Student("Sidorov", 52293, 1,1,2,3);
+        Student petrov = new Student("Petrov", 52295, 2,1,2,2);
+        Student sidorov = new Student("Sidorov", 52293, 2,1,2,3);
         studentList.add(ivanov);
         studentList.add(petrov);
         studentList.add(sidorov);
         Student admin = new Student(studentList);
         admin.displayStudentList();
-        admin.deleteStudent();
+        //admin.deleteStudent();
         System.out.println();
         admin.displayStudentList();
-
+        //admin.moveToNextCourse();
+        //admin.displayStudentList();
+        admin.printStudents(studentList,2);
+        Student test = new Student();
+        test.printStudents(studentList,2);
 
     }
 }
