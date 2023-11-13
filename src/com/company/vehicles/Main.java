@@ -39,13 +39,13 @@ public class Main {
                 return (c1.getMathMark() - c2.getMathMark());
             }
         };
-        Queue<Student> priorityQueue = new PriorityQueue<>(idComparator);
-        priorityQueue.add(sidorov);
+        Deque<Student> priorityQueue = new ArrayDeque<>();
+        priorityQueue.offer(sidorov);
         priorityQueue.add(ivanov);
         priorityQueue.add(petrov);
-
-        System.out.println(priorityQueue.poll().getName());
-        System.out.println(priorityQueue.poll().getName());
+        priorityQueue.removeFirstOccurrence(sidorov);
+        System.out.println(priorityQueue.getFirst().getName());
+        System.out.println(priorityQueue.getLast().getName());
 
         System.out.println( priorityQueue.peek().getName());
     }
